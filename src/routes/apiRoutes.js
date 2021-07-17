@@ -1,8 +1,10 @@
 const { Router } = require("express");
-const { apiIndexController } = require("../controller/apiController");
+const { apiAlive, apiPing } = require("../controller/apiController");
 
 const router = Router();
 
-router.get("/", apiIndexController);
+router.get("/api/alive", apiAlive);
+
+router.post("/api/ping", apiPing);
 
 module.exports = router;

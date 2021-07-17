@@ -1,12 +1,23 @@
 const { Request, Response } = require("express");
 
-const apiIndexController = (req, res) => {
+const apiAlive = (req, res) => {
   const response = {
     message: "Este es el index",
   };
   res.json(response);
 };
 
+
+const apiPing = (req, res) => {
+  const { data } = req.body;
+  console.log(data);
+  const response = {
+    data
+  }
+  res.json(response)
+}
+
 module.exports = {
-  apiIndexController,
+  apiAlive,
+  apiPing
 };
